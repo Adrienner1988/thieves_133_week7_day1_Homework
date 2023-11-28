@@ -99,10 +99,14 @@ console.log(diff -= 2);
 // Multiplication
 let product = 5 * 5;
 console.log(product);
+product *=2
+console.log(product)
 
 // Division
 let quotient = 25 / 5;
 console.log(quotient);
+quotient /=2
+console.log(quotient)
 
 // Exponents
 let expo = 5 ** 2;
@@ -137,9 +141,8 @@ function fullName(firstName, lastName){
 console.log(fullName('Adrienne', 'Daniels'));
 
 // Arrow Function (ES6)
-const goatPlayer = (playerName) => {
-    return `The GOAT will always be ${playerName}`;
-}
+const goatPlayer = (playerName) => `The GOAT will always be ${playerName}`;
+
 console.log(goatPlayer('Serena Williams'));
 
 // -------------------- if, else if, else conditional statements -----------------------
@@ -182,9 +185,10 @@ for(let name of artist){
     console.log(name);
 }
 
-// loop through an array with for-in loop (indices) (ES6) ??
+// loop through an array with for-in loop (indices) (ES6) 
 for (let idx in artist){
-    console.log[idx];
+    console.log(idx); //returns string
+    console.log(parseInt(idx)); // wrap in parseInt or parseNumber to work with as integer
 }
 
 // ----- While Loops -----

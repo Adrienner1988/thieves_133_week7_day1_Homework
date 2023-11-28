@@ -4,48 +4,41 @@ the list and checks that the current name is in the string passed in. The output
 `Matched ${dog_name}` if name is in the string, if its not a match console.log "No Match"
 */
 
-/* 
-function that takes the string AND list
-toString? need to join? or just take both list and string? pass a parameters?
-check if current names in arry are in string
-does casing matter? - search .lower() for JS
-output should pick out the matches in the string
-
-Used .toLowerCase() to convert both arry and string to lowercase to compare, if capitalization mattered. It does matter because .included() is case sensitive and need to check if the words in the arry are in the string and works as boolean
-*/
 let dog_string = "Hello Max, my name is Dog, and I have purple eyes!"
 let dog_names = ["Max","HAS","PuRple","dog"]
 
-function findWords(dog_string, dog_names){
-    for (let i = 0; i < dog_names.length; i++) {
-        if (dog_string.toLowerCase().includes(dog_names[i].toLowerCase())) {
-            console.log(`Matched ${dog_names[i]}`); 
-        } else {
-            console.log('No match');
-        }
-    }
-}
+const findWords = (str, dogs) => {
+    dogs.forEach(dog => {
+      if (str.toLowerCase().includes(dog.toLowerCase())) {
+        console.log(`Matched ${dog}`);
+      }
+      else {
+        console.log(`No Match`)
+      }
+    });
+};
 
 //Call method here with parameters
 findWords(dog_string, dog_names)
-
 
 //============Exercise #2 ============//
 /*Write a function that takes in an array and removes every even index with a splice, and replaces it with the string "even index" */
 
 Given_arr = ["Max","Baseball","Reboot","Goku","Trucks","Rodger"];
 
-function replaceEvens(Given_arr){
-    for (let i = 0; i <Given_arr.length; i += 2){
-        Given_arr.splice(i, 1, "even index");
-    }    
-}
-replaceEvens(Given_arr)
-console.log(Given_arr)
+const replaceEvens = () => {
+  for (let i = 0; i < Given_arr.length; i += 2){
+    Given_arr.splice(i, 1, "even index");
+  };
+};
 
-//Expected output
-//Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
-//Output arr == ["even index","Baseball","even index","Goku","even index","Rodger"]
+replaceEvens(Given_arr);
+console.log(Given_arr);
+
+
+// Expected output
+// Given arr == ["Max","Baseball","Reboot","Goku","Trucks","Rodger"]
+// Output arr == ["even index","Baseball","even index","Goku","even index","Rodger"]
 
 
 
@@ -63,7 +56,7 @@ function evenOrOdd(number) {
     }
   }
   
-  evenOrOdd(5)
+  evenOrOdd(5);
   
 
 // Codewars 2
@@ -79,3 +72,5 @@ function areaOrPerimeter(l , w) {
         return 2 * l + 2 * w;
       }
   }
+
+areaOrPerimeter();
